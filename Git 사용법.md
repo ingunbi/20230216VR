@@ -335,12 +335,12 @@
 
 1. 생활코딩 Git
 - Git의 기초적인 개념부터 브랜치, 병합, 협업 등 Git의 전반적인 사용법을 다룹니다.
-- [링크](https://opentutorials.org/course/2708)
+- 링크: https://opentutorials.org/course/2708
 
 2. Visual Studio Code로 배우는 Git & GitHub
 - Visual Studio Code를 사용하여 Git의 기본적인 사용법부터 원리와 고급 기능까지 다룹니다.
-- [링크](https://www.inflearn.com/course/git-and-github-davinci-codes#)
+- 링크: https://www.inflearn.com/course/git-and-github-davinci-codes#
 
 3. Git 강좌 - Try Git
 - Git의 기본 개념부터 브랜치, 병합, 협업, Pull Request 등 Git의 사용법을 다룹니다.
-- [링크](https://try.github.io/)
+- 링크: https://try.github.io/
