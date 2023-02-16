@@ -242,6 +242,59 @@
 - `git reset HEAD~1` 명령어를 사용하여 마지막 커밋을 삭제
 - `git reset HEAD file.txt` 명령어를 사용하여 `file.txt` 파일을 스테이징 영역에서 제거
 
+# Git push --force에 대한 정의
+
+1. Git push --force란?
+- Git에서 원격 저장소에 강제로 변경된 내용을 푸시하는 명령어
+- 원격 저장소의 변경 이력을 덮어쓰기 가능
+
+2. Git push --force 사용 시 고려사항
+- 다른 개발자와 공유하고 있는 원격 저장소의 변경 이력을 덮어씌우므로, 사용 전 반드시 주의가 필요
+- 다른 개발자와 공유하고 있는 원격 저장소의 변경 이력을 덮어쓰면, 이전 이력은 영구적으로 삭제됨
+- 대부분의 경우, push --force 대신 revert나 reset을 사용하여 이전 변경 이력을 복구할 수 있음
+
+3. Git push --force 사용 예시
+- `git push --force origin master` 명령어를 사용하여 `master` 브랜치의 변경 내용을 강제로 푸시함
+- `git push -f origin feature` 명령어를 사용하여 `feature` 브랜치의 변경 내용을 강제로 푸시함
+- `git push --force-with-lease` 명령어를 사용하여 원격 저장소의 변경 이력을 확인하고, 충돌이 발생하지 않을 때에만 강제로 푸시함
+
+
+# Git pull에 대한 정의
+
+1. Git pull이란?
+- Git에서 원격 저장소의 최신 변경 내용을 로컬 저장소로 가져오는 명령어
+- fetch와 merge가 결합한 명령어
+
+2. Git pull 명령어
+- `git pull` 명령어를 사용하여 원격 저장소의 변경 내용을 가져옴
+- 가져온 변경 내용을 로컬 브랜치에 병합하여, 로컬 저장소에 반영
+
+3. Git pull 사용 시 고려사항
+- pull 명령어는 merge를 수행하기 때문에, 충돌이 발생할 수 있음
+- pull 명령어를 사용하면, 현재 브랜치가 원격 저장소의 최신 상태와 일치하게 됨
+
+4. Git pull 사용 예시
+- `git pull origin master` 명령어를 사용하여 `master` 브랜치의 변경 내용을 로컬 저장소로 가져옴
+- `git pull origin feature` 명령어를 사용하여 `feature` 브랜치의 변경 내용을 로컬 저장소로 가져옴
+
+
+# Git conflict 해결 방법
+
+1. Git conflict란?
+- 동일한 파일의 다른 부분을 수정하고, 변경 이력을 푸시하면 충돌이 발생하는 현상
+
+2. Git conflict 해결 방법
+- `git status` 명령어를 사용하여 충돌이 발생한 파일 확인
+- 충돌이 발생한 파일에서 `<<<<<<`과 `>>>>>>` 사이에 있는 내용을 수정하여 충돌 해결
+- 충돌을 해결한 파일을 `git add` 명령어를 사용하여 스테이징 영역에 추가
+- `git commit` 명령어를 사용하여 커밋 생성
+- `git log` 명령어를 사용하여 변경 이력 확인
+
+3. Git conflict 예방 방법
+- 코드 작성 전에 다른 개발자와 코드 작업 일정 및 구조에 대해 미리 논의하여 충돌을 예방
+- 작업 전에 최신 변경 내용을 가져와서, 작업 도중 충돌이 발생하지 않도록 함
+- 작업 도중 충돌이 발생했을 경우, 가능한 빠르게 해결하여 코드 변경 내용이 최신 상태를 유지하도록 함
+
 
 # Git revert에 대한 정의
 
@@ -260,3 +313,34 @@
 4. Git revert 사용 예시
 - `git revert HEAD` 명령어를 사용하여 마지막 커밋을 취소하고, 변경 이력을 새로 생성
 - `git revert <commit>` 명령어를 사용하여 `<commit>`에서 변경된 내용을 삭제하고, 변경 이력을 새로 생성
+
+# Git branch를 이해하는데 도움이 되는 사이트 소개
+
+1. Atlassian Git Branching
+- Git branch를 처음 접하는 사용자를 대상으로, Git branch의 기본 개념과 사용 방법 등을 다룹니다.
+- 링크: https://www.atlassian.com/git/tutorials/using-branches
+
+2. Visualizing Git
+- Git branch와 merge에 대한 개념을 시각적으로 이해할 수 있는 사이트입니다.
+- 링크: https://git-school.github.io/visualizing-git/
+
+3. Learn Git Branching
+- 인터랙티브한 Git branch 학습 플랫폼으로, Git branch의 기본 개념부터 심화적인 내용까지 다양한 학습 콘텐츠를 제공합니다.
+- 링크: https://learngitbranching.js.org/
+
+위 세 가지 사이트는 Git branch를 이해하고 학습할 수 있는 무료 온라인 플랫폼입니다. Git branch의 기본 개념부터 원리와 기능까지 다양한 내용을 다루며, Git을 보다 더 효율적으로 사용할 수 있도록 도와줍니다.
+
+
+## Git을 이해하는데 도움이 되는 강좌
+
+1. 생활코딩 Git
+- Git의 기초적인 개념부터 브랜치, 병합, 협업 등 Git의 전반적인 사용법을 다룹니다.
+- [링크](https://opentutorials.org/course/2708)
+
+2. Visual Studio Code로 배우는 Git & GitHub
+- Visual Studio Code를 사용하여 Git의 기본적인 사용법부터 원리와 고급 기능까지 다룹니다.
+- [링크](https://www.inflearn.com/course/git-and-github-davinci-codes#)
+
+3. Git 강좌 - Try Git
+- Git의 기본 개념부터 브랜치, 병합, 협업, Pull Request 등 Git의 사용법을 다룹니다.
+- [링크](https://try.github.io/)
